@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Will Rose Marie Requiso - Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
@@ -17,6 +18,9 @@
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
         </div>
     </nav>
 
@@ -46,78 +50,116 @@
     <!-- About Section -->
     <section id="about" class="about-section">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <button class="edit-btn" data-section="about" aria-label="Edit About section">
+                    <i class="fas fa-edit"></i>
+                </button>
+            </div>
             <div class="about-content">
                 <div class="about-info">
                     <div class="about-card">
                         <div class="about-header">
-                            <h3>Will Rose Marie Requiso</h3>
-                            <p class="university">Caraga State University</p>
-                            <p class="degree">Bachelor of Science in Computer Science</p>
+                            <h3 class="editable" data-field="name">Will Rose Marie Requiso</h3>
+                            <p class="university editable" data-field="university">Caraga State University</p>
+                            <p class="degree editable" data-field="degree">Bachelor of Science in Computer Science</p>
                         </div>
                         <div class="about-body">
-                            <p>I am a passionate Computer Science student at Caraga State University, dedicated to turning complex problems into elegant solutions through code. My journey in programming has taught me that every line of code tells a story, and I strive to write narratives that are both functional and beautiful.</p>
-                            <p>With a strong foundation in computer science principles and a keen eye for detail, I approach each project with creativity and precision. I believe in the power of technology to create positive change and am constantly learning new ways to improve my craft.</p>
+                            <p class="editable" data-field="bio1">I am a passionate Computer Science student at Caraga State University, dedicated to turning complex problems into elegant solutions through code. My journey in programming has taught me that every line of code tells a story, and I strive to write narratives that are both functional and beautiful.</p>
+                            <p class="editable" data-field="bio2">With a strong foundation in computer science principles and a keen eye for detail, I approach each project with creativity and precision. I believe in the power of technology to create positive change and am constantly learning new ways to improve my craft.</p>
                         </div>
                     </div>
                 </div>
                 <div class="skills-section">
                     <div class="skills-card">
-                        <h3>Technical Skills</h3>
-                        <div class="skills-list">
-                            <div class="skill-item">
+                        <div class="skills-header">
+                            <h3>Technical Skills</h3>
+                            <div class="skills-controls">
+                                <button class="add-skill-btn" title="Add new skill">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button class="edit-btn skills-edit-btn" data-section="skills" title="Edit skills">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="skills-list" id="skills-list">
+                            <div class="skill-item" data-skill="html">
                                 <span class="skill-name">HTML</span>
-                                <div class="star-rating">
+                                <div class="star-rating" data-rating="4">
                                     <span class="star filled">★</span>
                                     <span class="star filled">★</span>
                                     <span class="star filled">★</span>
                                     <span class="star filled">★</span>
                                     <span class="star">★</span>
                                 </div>
+                                <button class="delete-skill-btn" style="display: none;">
+                                    <i class="fas fa-trash"></i>
+                                </button>
                             </div>
-                            <div class="skill-item">
+                            <div class="skill-item" data-skill="css">
                                 <span class="skill-name">CSS</span>
-                                <div class="star-rating">
+                                <div class="star-rating" data-rating="4">
                                     <span class="star filled">★</span>
                                     <span class="star filled">★</span>
                                     <span class="star filled">★</span>
                                     <span class="star filled">★</span>
                                     <span class="star">★</span>
                                 </div>
+                                <button class="delete-skill-btn" style="display: none;">
+                                    <i class="fas fa-trash"></i>
+                                </button>
                             </div>
-                            <div class="skill-item">
+                            <div class="skill-item" data-skill="javascript">
                                 <span class="skill-name">JavaScript</span>
-                                <div class="star-rating">
+                                <div class="star-rating" data-rating="1">
                                     <span class="star filled">★</span>
                                     <span class="star">★</span>
                                     <span class="star">★</span>
                                     <span class="star">★</span>
                                     <span class="star">★</span>
                                 </div>
+                                <button class="delete-skill-btn" style="display: none;">
+                                    <i class="fas fa-trash"></i>
+                                </button>
                             </div>
-                            <div class="skill-item">
+                            <div class="skill-item" data-skill="java">
                                 <span class="skill-name">Java</span>
-                                <div class="star-rating">
+                                <div class="star-rating" data-rating="1">
                                     <span class="star filled">★</span>
                                     <span class="star">★</span>
                                     <span class="star">★</span>
                                     <span class="star">★</span>
                                     <span class="star">★</span>
                                 </div>
+                                <button class="delete-skill-btn" style="display: none;">
+                                    <i class="fas fa-trash"></i>
+                                </button>
                             </div>
-                            <div class="skill-item">
+                            <div class="skill-item" data-skill="c">
                                 <span class="skill-name">C</span>
-                                <div class="star-rating">
+                                <div class="star-rating" data-rating="2">
                                     <span class="star filled">★</span>
                                     <span class="star filled">★</span>
                                     <span class="star">★</span>
                                     <span class="star">★</span>
                                     <span class="star">★</span>
                                 </div>
+                                <button class="delete-skill-btn" style="display: none;">
+                                    <i class="fas fa-trash"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="edit-controls" style="display: none;">
+                <button class="save-btn" data-section="about">
+                    <i class="fas fa-save"></i> Save
+                </button>
+                <button class="cancel-btn" data-section="about">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
             </div>
         </div>
     </section>
@@ -211,38 +253,51 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
+            <div class="section-header">
+                <h2 class="section-title">Contact Me</h2>
+                <button class="edit-btn" data-section="contact" aria-label="Edit Contact section">
+                    <i class="fas fa-edit"></i>
+                </button>
+            </div>
             <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
+                <div class="contact-info" id="contact-info">
+                    <div class="contact-item" data-contact="phone">
                         <div class="contact-icon">📱</div>
                         <div class="contact-details">
                             <h4>Phone</h4>
-                            <p>09123456789</p>
+                            <p class="editable" data-field="phone">09123456789</p>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" data-contact="email">
                         <div class="contact-icon">📧</div>
                         <div class="contact-details">
                             <h4>Email</h4>
-                            <p>willrosemreqz@gmail.com</p>
+                            <p class="editable" data-field="email">willrosemreqz@gmail.com</p>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" data-contact="facebook">
                         <div class="contact-icon">📘</div>
                         <div class="contact-details">
                             <h4>Facebook</h4>
-                            <p>Will Rose</p>
+                            <p class="editable" data-field="facebook">Will Rose</p>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" data-contact="telegram">
                         <div class="contact-icon">📩</div>
                         <div class="contact-details">
                             <h4>Telegram</h4>
-                            <p>09123456789</p>
+                            <p class="editable" data-field="telegram">09123456789</p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="edit-controls" style="display: none;">
+                <button class="save-btn" data-section="contact">
+                    <i class="fas fa-save"></i> Save
+                </button>
+                <button class="cancel-btn" data-section="contact">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
             </div>
         </div>
     </section>
@@ -250,8 +305,37 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Will Rose Marie Requiso. All rights reserved.</p>
+            <p>&copy; 2025 WRMRequiso. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Add Skill Modal -->
+    <div id="add-skill-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add New Skill</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="new-skill-name" placeholder="Skill name" required>
+                <div class="rating-input">
+                    <label>Rating:</label>
+                    <div class="star-input">
+                        <span class="star-btn" data-rating="1">★</span>
+                        <span class="star-btn" data-rating="2">★</span>
+                        <span class="star-btn" data-rating="3">★</span>
+                        <span class="star-btn" data-rating="4">★</span>
+                        <span class="star-btn" data-rating="5">★</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="save-skill-btn" class="save-btn">Add Skill</button>
+                <button id="cancel-skill-btn" class="cancel-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
